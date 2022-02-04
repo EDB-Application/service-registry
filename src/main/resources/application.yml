@@ -1,9 +1,12 @@
-server:
-  port: 8761
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}/eureka
   instance:
     prefer-ip-address: false
+    hostname: service-registry-application.herokuapp.com
+  server:
+    maxThreadsForPeerReplication: 0
